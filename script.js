@@ -12,11 +12,15 @@ function writePassword() {
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
+// function for generating a random password
 function generatePassword() {
+  //character for password string
   var lowerRandom = "abcdefghijklmnopqrstuvwxyz";
   var upperRandom = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
   var specialRandom = "!#$%&()*+-@<>?,./";
   var numberRandom = "1234567890";
+
+  //promting user input
   var length = 0;
   var option = false;
   while (!option) {
@@ -32,6 +36,7 @@ function generatePassword() {
     }
   }
 
+  //checking user input
   var charRandom = "";
   if (lowercase) {
     charRandom += lowerRandom;
@@ -45,6 +50,8 @@ function generatePassword() {
   if (special) {
     charRandom += specialRandom;
   }
+
+  //generate random password string based on user input
   var ranPass = "";
   for (var i = 0; i < length; i++) {
     ranPass += charRandom.charAt(Math.floor(Math.random() * charRandom.length));
@@ -52,11 +59,3 @@ function generatePassword() {
 
   return ranPass;
 }
-
-/*
-Password Requirement - this could be an alert after clicking on "Generate Password" button
-User can choose the requirement
-Length: 8 - 128 characters
-type: lowercase, uppercase, numeric, and/or special characters
-- atleast one character type is selected, from above
-*/
