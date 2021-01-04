@@ -2,7 +2,7 @@
 
 Random Password Generator
 
-![Password Generator](./Assets/PasswordGenerator.png)
+![Password Generator](./Assets/PasswordGenerator.PNG)
 
 ### Password Include
 
