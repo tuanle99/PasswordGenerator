@@ -26,6 +26,11 @@ function generatePassword() {
   while (!option) {
     while (length < 8 || length > 128 || isNaN(length)) {
       length = prompt("Password Length: 8 - 128");
+      if (length < 8 || length > 128) {
+        alert("Password required length to be between 8 and 128");
+      } else if (isNaN(length)) {
+        alert("Please enter a valid number");
+      }
     }
     var lowercase = confirm("do you want lowercase letter in your password?");
     var uppercase = confirm("do you want uppercase letter in your password?");
@@ -33,6 +38,8 @@ function generatePassword() {
     var special = confirm("do you want special character in your password?");
     if (lowercase || uppercase || number || special) {
       option = true;
+    } else {
+      alert("Please select at least 1 criteria for your password...")
     }
   }
 
